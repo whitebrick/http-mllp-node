@@ -3,13 +3,17 @@ http-mllp gateway for Node.js
 
 This is a fork of the [mllp](https://github.com/amida-tech/mllp) project with the simple addition of an Express HTTP listner to forward requests to an MLLP endpoint for HL7 v2.x messaging. Ideally this would use the Serverless framework to deploy to AWS Lambda but currently Lambda only supports HTTP.
 
-Changes from the original project:
+This gateway can be used with [hapi-serverless](https://github.com/whitebrick/hapi-serverless) to send and receive HL7 v2.x messages in JSON from a serverless event-driven architecture.
+
+A simple MLLP HL7 V2.x ACK response server is available for testing, more information [here](https://hl7v2-test.whitebrick.com).
+
+Changes from the [original mllp](https://github.com/amida-tech/mllp)  project:
 
 | Path                        | Description                                                  |
 | --------------------------- | ------------------------------------------------------------ |
 | `./gateway.js`              | Express HTTP server and request forwarder                    |
 | `./test/gateway-functional` | Simple functional test using bash script with curl and test `er7` file |
-| `index.js`                  | `//.split('\r')[1]` is commented out to return the full message |
+| `index.js`                  | `//.split('\r')[1]` is commented-out to return the full message |
 
 ### Overview
 
@@ -43,3 +47,8 @@ vi .env # to change server host/port
 npm i
 node gateway.js
 ```
+
+### Contributing
+
+- Questions, comments, suggestions and contributions welcome - contact: _hello_ at _whitebrick_ dot _com_
+
