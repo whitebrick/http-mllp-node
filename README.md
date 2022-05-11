@@ -1,4 +1,4 @@
-http-mllp gateway
+http-mllp gateway for Node.js
 ====
 
 This is a fork of the [mllp](https://github.com/amida-tech/mllp) project with the simple addition of an Express HTTP listner to forward requests to an MLLP endpoint for HL7 v2.x messaging. Ideally this would use the Serverless framework to deploy to AWS Lambda but currently Lambda only supports HTTP.
