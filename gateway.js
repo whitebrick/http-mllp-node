@@ -53,11 +53,15 @@ httpServer.post("/", (req, res) => {
       console.log("- MLLP response ackData:");
       console.log(ackData);
       const payload = {};
-      if(err) payload.error = err;
+      let status = 200;
+      if(err){
+        payload.error = err;
+        status = 500
+      }
       if(ackData) payload.er7 = ackData;
       console.log("\nResponding to HTTP request:");
       console.log(JSON.stringify(payload));
-      res.json(payload);
+      res.json(payload).status(status);
     }
   );
 });
